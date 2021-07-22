@@ -11,3 +11,15 @@ Style/Documentation:
 Lint/MissingSuper:
   Exclude:
     - app/services/**/*
+
+Metrics/AbcSize:
+  Exclude:
+    - db/**/*
+
+Metrics/MethodLength:
+  Exclude:
+    - db/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - db/**/*
