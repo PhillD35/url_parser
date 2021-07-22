@@ -1,0 +1,6 @@
+<%= form_with url: links_path, method: :post do |form| %>
+  <%= form.label :links %>
+  <%= form.text_area :links, size: '60x10' %>
+
+  <%= form.submit "Submit" %>
+<% end %>
