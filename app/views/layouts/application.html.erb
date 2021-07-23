@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>UrlParser</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Скачиватель Картинок</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
-  </head>
+  <%= stylesheet_pack_tag 'application', media: 'all' %>
+  <%= javascript_pack_tag 'application' %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <div class="container">
+    <div class="row is-full-width">
+      <nav class="nav is-full-width mb-3">
+        <div class="nav-left">
+            <%= link_to 'Скачиватель', new_link_path, class: 'brand' %>
+
+            <div class="tabs">
+              <%= link_to 'Закинуть картинку!', new_link_path %>
+              <%= link_to 'Галерея', links_path %>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+      <%= yield %>
+    </div>
+  </div>
+</body>
 </html>

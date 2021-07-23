@@ -1,6 +1,5 @@
-<%= form_with url: links_path, method: :post do |form| %>
-  <%= form.label :links %>
-  <%= form.text_area :links, size: '60x10' %>
+<%= form_with url: links_path, method: :post, class: 'mr-auto' do |form| %>
+  <%= form.text_area :links, size: '120x10', class: 'mb-2' %>
 
-  <%= form.submit "Submit" %>
+  <%= form.submit "Закачать картинки!" %>
 <% end %>

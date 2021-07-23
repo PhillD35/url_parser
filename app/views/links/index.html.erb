@@ -1,7 +1,9 @@
 <% @links.each do |link| %>
-  <div>
-    <%= link_to url_for(link.image), target: '_blank' do %>
-      <%= image_tag url_for(link.image), style: 'max-width: 200px; max-height: 200px;' %>
-    <% end %>
+  <div class="col-4">
+    <div class="card">
+      <%= link_to url_for(link.image), target: '_blank' do %>
+        <%= image_tag url_for(link.image), class: 'card-image' %>
+      <% end %>
+    </div>
   </div>
 <% end %>
