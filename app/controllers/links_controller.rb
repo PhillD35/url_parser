@@ -4,8 +4,12 @@ class LinksController < ApplicationController
   def new; end
 
   def create
-    LinksCreatorService.call(params[:text])
+    LinksCreatorService.call(params[:links])
+
+    redirect_to links_path
   end
 
-  def index; end
+  def index
+    @links = Link.success
+  end
 end

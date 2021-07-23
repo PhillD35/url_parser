@@ -8,7 +8,7 @@ class LinksCreatorService < ApplicationService
   def call
     links = create_links
 
-    ImageDownloaderService.call(links)
+    ImagesDownloaderService.call(links)
   end
 
   private
@@ -20,6 +20,6 @@ class LinksCreatorService < ApplicationService
       .lines(chomp: true)
       .reject(&:empty?)
       .select { |line| line.match?(/\A#{URI::DEFAULT_PARSER.make_regexp(%w[http https])}\z/) }
-      .map { |line| Link.create_or_find_by(url: line) }
+      .map { |line| Link.find_or_create_by(url: line) }
   end
 end

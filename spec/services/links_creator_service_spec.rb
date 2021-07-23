@@ -4,7 +4,7 @@ RSpec.describe LinksCreatorService do
   describe '.call' do
     subject { -> { described_class.call(text) } }
 
-    before { expect(ImageDownloaderService).to receive(:call) }
+    before { expect(ImagesDownloaderService).to receive(:call) }
 
     context 'when text is nil' do
       let(:text) { nil }
