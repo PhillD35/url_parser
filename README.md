@@ -1,24 +1,38 @@
-# README
+## Приложение "Скачиватель картинок"
+#### Тестовое задание
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### Аннотация
+Проект реализован на `Ruby on Rails (v6.1.4)` и `Ruby v2.7.2`.
 
-Things you may want to cover:
+#### Опробованные/использованные технологии:
++ ActiveStorage
++ gem HTTParty
++ Сервисные объекты
 
-* Ruby version
+#### Установка и запуск
+Перед запуском приложения необходимо выполнить установку всех необходимых гемов и подготовку базы данных. Для этого в консоли в директории с приложением необходимо выполнить команды:
 
-* System dependencies
+```
+sudo service postgresql start
+make prepare
+```
 
-* Configuration
+Или выполнить отдельно команды
 
-* Database creation
+```
+bundle install
+bundle exec rails db:create
+bundle exec rails db:migrate
+```
 
-* Database initialization
+Для запуска локального сервера необходимо выполнить команду:
 
-* How to run the test suite
+```
+make server
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+Или
 
-* Deployment instructions
-
-* ...
+```
+bundle exec rails s
+```

@@ -8,6 +8,11 @@ migration:
 
 m: migration
 
+prepare:
+	bundle install
+	bundle exec rails db:create
+	bundle exec rails db:migrate
+
 server:
 	bundle exec rails server
 
