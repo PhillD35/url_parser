@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ImagesDownloaderService < ApplicationService
   def initialize(links)
     @links = links
