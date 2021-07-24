@@ -13,6 +13,16 @@
 }
 
 .card-image {
-  height: 50vh;
+  max-width: 100%;
   object-fit: contain;
+}
+
+.columns {
+  display: column;
+  columns: 3;
+}
+
+.columns > * {
+  break-inside: avoid;
+  margin-bottom: 1rem;
 }
