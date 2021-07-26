@@ -5,6 +5,7 @@ class ImageDownloaderService < ApplicationService
     @link = link
   end
 
+  # rubocop:disable Metrics/AbcSize
   def call
     return unless link.pending?
     return link.failed! unless image_response?
@@ -15,7 +16,10 @@ class ImageDownloaderService < ApplicationService
 
     link.image.attach(io: File.open('tmp/image'), filename: 'image')
     link.success!
+  rescue StandardError
+    link.failed!
   end
+  # rubocop:enable Metrics/AbcSize
 
   private
 
